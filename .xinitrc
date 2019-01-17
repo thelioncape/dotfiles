@@ -11,6 +11,7 @@ feh --bg-scale ~/Wallpapers/macOS-Mojave-wallpaper.jpg
 
 xcompmgr -c -C &
 
+compton &
 ~/Scripts/startrclone
 exec ~/Scripts/startdwm
 
