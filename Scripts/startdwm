@@ -1,0 +1,16 @@
+# relaunch DWM if the binary changes, otherwise bail
+csum=$(sha1sum which /opt/dwm/dwm)
+new_csum=""
+while true
+do
+    if [ "$csum" != "$new_csum" ]
+    then
+        csum=$new_csum
+        /opt/dwm/dwm
+    else
+        exit 0
+    fi
+    new_csum=$(sha1sum /opt/dwm/dwm)
+    sleep 0.5
+done
+
